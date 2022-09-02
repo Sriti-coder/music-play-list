@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Station</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3 class="heading">My Favourite Song</h3>
+    <div class="container">
+        <div class="main-video">
+            <div class="video">
+                <video src="player/play1.mp4" controls muted autoplay></video>
+                <h3>Akash e bristi</h3>
+            </div>
+        </div>
+        <div class="video-list">
+            <div class="vid">
+                <video src="player/play2.mp4" muted></video>
+                <h3 class="title">Ektai tumi</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play5.mp4" muted></video>
+                <h3 class="title">Amar sob tuku bissas</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play6.mp4" muted></video>
+                <h3 class="title">Pe loon</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play7.mp4" muted></video>
+                <h3 class="title">Akash e bristi</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play8.mp4" muted></video>
+                <h3 class="title">Zalima</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play9.mp4" muted></video>
+                <h3 class="title">tip tip barsa</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play11.mp4" muted></video>
+                <h3 class="title">Tomay boddo proyojon</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play12.mp4" muted></video>
+                <h3 class="title">pal var</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play14.mp4" muted></video>
+                <h3 class="title">tere sang yara</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play16.mp4" muted></video>
+                <h3 class="title">chep thils</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play21.mp4" muted></video>
+                <h3 class="title">haule haule</h3>
+            </div>
+            <div class="vid">
+                <video src="player/play22.mp4" muted></video>
+                <h3 class="title">bol na halke</h3>
+            </div>
+    </div>
+    <script>
+        let listVideo = document.querySelectorAll('.video-list .vid');
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('main-video .title');
+        
+
+        listVideo.forEach(video =>{
+            video.onclick = () =>{
+                listVideo.forEach(vid =>vid.classList.remove('active'));
+                video.classList.add('active');
+                if(video.classList.contains('active')){
+                    let src = video.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    let text = video.children[1].innerHTML;
+                    title.innerHTML = text;
+                };
+            };
+        });
+    </script>
+</body>
+</html>
